@@ -1,0 +1,147 @@
+// style.scss huvudstilmall med färger och responsiv layout
+// färgvariabler
+$color_1: var(--link);
+$color_2: var(--link-visited);
+$color_3: var(--tab-link);
+$font-family_1: Verdana, "Geneva", Tahoma, sans-serif;
+// $font-family_2: "Gotham Rounded", sans-serif;
+$background-color_1: var(--main-bg);
+$background-color_2: var(--text-bg2);
+$background-color_3: var(--text-bg);
+$text-color_1: var(--text-main);
+$background-color_5: var (--shadow);
+$body-color: #333;
+
+// Färgvariabler som används vid light respektive dark färgläget
+.light {
+	--main-bg: #f7f7fa;
+	--text-bg: #bbd1ea;
+	--shadow: #a1c6ea;
+	--text-sec: #507dbc;
+	--text-main: #16263b;
+	--link: #081ddd;
+	--link-visited: #005e6e;
+	--text-bg2: #f7f7fa;
+	--cal-output: #28282c;
+	--tab-link: #2f2fa2;
+	--tab-hov: #1a1b5e;
+	--tab-act: #0c0032;
+}
+
+.dark {
+	--main-bg: #16263b;
+	--text-bg: #507dbc;
+	--shadow: #a1c6ea;
+	--text-sec: #bbd1ea;
+	--text-main: #dae3e5;
+	--link: #3f7bd4;
+	--link-visited: #16cec5;
+	--text-bg2: #16263b;
+	--cal-output: #0b1e38;
+	--tab-link: #cad8e4;
+	--tab-hov: #b0bdf0;
+	--tab-act: #ffffff;
+}
+
+// Grundläggande stil som används på webbplatsen
+h1 {
+	font-family: $font-family_1;
+	text-align: center;
+	font-size: 3em;
+	overflow-wrap: break-word;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+h2 {
+	font-family: $font-family_1;
+	text-align: center;
+	font-size: 2em;
+}
+
+h3 {
+	font-family: $font-family_1;
+	margin: 0;
+	margin-top: 50px;
+	margin-bottom: 1rem;
+}
+
+body {
+	margin: 0;
+    line-height: 1.5;
+    font-family: "Open Sans", sans-serif;
+    background-color: $body-color;
+    color: $text-color_1;
+}
+
+.page {
+	background-color: $background-color_1;
+}
+
+a {
+	&:link {
+		color: $color_1;
+	}
+	&:visited {
+		color: $color_2;
+	}
+	&:hover {
+		color: $color_3;
+	}
+}
+
+.wrapperMain {
+	background-color: $background-color_2;
+}
+
+.row {
+	&::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
+
+/** Layout och responsiv design **/
+* {
+    box-sizing: border-box;
+}
+
+main {
+    padding-top: 4rem;
+	background-color: $background-color_1;
+    color: $text-color_1;
+	padding-bottom: 3rem;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+  /* För mindre skärmar */
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 968px) {
+    /* För större skärmar */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}

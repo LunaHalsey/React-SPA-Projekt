@@ -1,0 +1,21 @@
+// footer.scss stil på sidfot
+
+$color_4: #f2f2f2;
+$color_5: #333;
+$background-color_3: #333;
+$background-color_4: #f2f2f2;
+$font-family_2: "Gotham Rounded", sans-serif;
+
+.footer-color {
+    background-color: $background-color_3;
+    color: $color_4;
+    height: 100%;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-text {
+    list-style: none;
+}

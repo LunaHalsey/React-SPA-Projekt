@@ -1,0 +1,30 @@
+// cv.scss stil på cv-sidan
+$text-color_1: var(--text-main);
+.table-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .cv-table {
+        // border: 1px solid black;
+
+        thead {
+            font-size: 1.3rem;
+        }
+
+        tbody {
+
+            tr {
+
+                td {
+                    border-bottom: 2px solid $text-color_1;
+                    padding: 0.5rem;
+                    padding: 1rem;
+                }
+            }
+
+        }
+
+    }
+}
+

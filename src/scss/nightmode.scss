@@ -1,0 +1,20 @@
+//nightmode.scss stil på nattlägesknappar
+$background-color_1: var(--main-bg);
+$border-color_1: var(--text-sec);
+$background-color_5: var(--shadow);
+
+.night-mode-toggle {
+    padding: 0.5rem 1.3rem 0.5rem 1.3rem;
+    // float: right;
+    border-radius: 2rem;
+    border: 2px solid $border-color_1;
+    background-color: $background-color_1;
+
+    &:hover {
+        background-color: $background-color_5;
+
+    }
+}
+
+
+

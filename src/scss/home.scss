@@ -1,0 +1,16 @@
+// home.scss stil på hem/startsidan
+$background-color_3: var(--text-bg);
+
+.page-link {
+    &:link {
+        padding: 1rem;
+    }
+    &:hover {
+        background-color: $background-color_3;
+    }
+}
+
+.home-text {
+    text-align: center;
+}
+
