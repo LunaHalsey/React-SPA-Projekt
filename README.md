@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# React projekt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Detta projekt innehåller koden för en Single Page Application (SPA)-webbplats som använder React.js.
+Webbplatsen innehåller sidorna: Om mig, CV, Kontakt, och Projekt.
 
-## Available Scripts
+## Filstruktur
 
-In the project directory, you can run:
+Skapade nya filer är inom mappar.
+App.js är den sida som visas på webbplatsen. Sidhuvud (\<Header /\>) och sidfot (\<Footer /\> är samma på alla webbplatsens ”sidor”. Innehållet inom <main> ändras med React Router. Detta är SPA sidorna.
+Webbplatsens olika SPA-sidor finns inom mappen ”page”. Sidorna är: Hem/startsidan (Home), Om mig (AboutMe), CV (CV), Kontakt (Contact), Projekt (Project).
+Komponenter som används finns i mappen ”components”. Huvud- och subkomponenter finns i denna mapp. Exempel på komponenter är Sidhuvud (Header), Navigationsmenyn i sidhuvud (Navbar) och Nattläget (NightMode).
+I mappen ”data” finns filer med tabelldata för CV-sidan.
+Mappen ”img” innehåller bilder som används på webbplatsen.
+Mappen ”redux” innehåller komponenter som används till Redux-funktionen som används till nattlägesfunktionen. Den är uppdelad i action (ThemeActions), reducers (ThemeReducer) och Store.
+Webbplatsen stilmallar finns inom mappen ”scss”. Om en sida eller komponent behöver ändras med en stilmall, så kan den vara given sin egen stilmall.
 
-### `npm start`
+## Projektets tekniska krav
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### React Router
+Router används för att ändra innehållen inom \<main\> på webbplatsen och skapa en fungerande SPA-webbplats. För att gå till de olika sidorna så använder man sig av navigationsmenyn.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### useState Hook
+useState används på kontaktsidan. Det används för att presentera det som skrivits i formuläret och skickades.
 
-### `npm test`
+### Redux
+Redux används för att skapa nattlägesfunktionen vilket ändrar färgtemat som används på webbplatsen. Funktionen fungerar genom att ändra klassen i \<main\>, ex. \<main className=”light”\> till \<main className=”dark”\>. Färgteman ändras då bara inom \<main\> och element som har klassen ”light” eller ”dark”. Färgerna och dess variabler finns inom style.scss. Val av nattläge sparas inom localstorage för senare besök.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### CSS preprocessor
+SASS används som CSS-preprocessor.
 
-### `npm run build`
+## För att köra React-applikationen
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Hämta och öppna applikationen i exempelvis Visual Studio Code.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+SASS används i projektet och måste då installeras. Skriv detta i terminalen för applikationen VS Code:
+```
+npm i sass --save-dev
+```
+För att starta React-applikationen så skriv detta i terminalen:
+```
+npm start
+```
